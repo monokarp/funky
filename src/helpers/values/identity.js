@@ -1,4 +1,3 @@
-exports.identity =
-    function (aValue) {
-        return aValue;
-    }
+exports.identity = function (aValue) {
+  return aValue;
+};

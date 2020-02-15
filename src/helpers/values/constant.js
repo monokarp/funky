@@ -1,6 +1,5 @@
-exports.constant =
-    function(aValue) {
-        return function value() {
-            return aValue;
-        }
-    }
+exports.constant = function (aValue) {
+  return function value() {
+    return aValue;
+  };
+};
