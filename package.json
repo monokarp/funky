@@ -1,0 +1,23 @@
+{
+  "name": "funky",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "run": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monokarp/funky.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monokarp/funky/issues"
+  },
+  "homepage": "https://github.com/monokarp/funky#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
