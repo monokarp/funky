@@ -1,4 +1,4 @@
-const identity = require('./identity');
+const { identity } = require('./identity');
 
 describe('identity', () => {
     it('should return the value', () => {

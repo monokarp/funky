@@ -1,4 +1,4 @@
-const unary = require('./unary');
+const { unary } = require('./unary');
 
 describe('unary', () => {
     it('should apply first argument to the inner fn', () => {
