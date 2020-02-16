@@ -1,5 +1,5 @@
-exports.spread = function (aFunction) {
-    return function spreadArgs(args) {
-        return aFunction(...args);
-    };
+exports.spread = function spread(aFunction) {
+  return function spreadArgs(args) {
+    return aFunction(...args);
+  };
 };
