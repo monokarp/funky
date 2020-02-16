@@ -4,6 +4,6 @@ function when(predicate, fn) {
       ? fn(...args)
       : undefined;
   };
-};
+}
 
 exports.when = when;

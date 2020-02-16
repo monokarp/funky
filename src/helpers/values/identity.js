@@ -1,3 +1,5 @@
-exports.identity = function identity(aValue) {
+function identity(aValue) {
   return aValue;
-};
+}
+
+exports.identity = identity;

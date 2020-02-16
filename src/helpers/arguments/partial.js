@@ -1,5 +1,7 @@
-exports.partial = function partial(aFunction, ...args) {
+function partial(fn, ...args) {
   return function external(...rest) {
-    return aFunction(...args, ...rest);
+    return fn(...args, ...rest);
   };
-};
+}
+
+exports.partial = partial;

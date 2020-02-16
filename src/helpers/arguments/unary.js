@@ -1,5 +1,7 @@
-exports.unary = function unary(aFunction) {
+function unary(fn) {
   return function singleArg(arg) {
-    return aFunction(arg);
+    return fn(arg);
   };
-};
+}
+
+exports.unary = unary;

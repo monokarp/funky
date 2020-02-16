@@ -1,9 +1,11 @@
 const { partial } = require('./partial');
 
-exports.curry = function curry(aFunction, arity = aFunction.length) {
+function curry(fn, arity = fn.length) {
   return function curried(...args) {
     return (args.length < arity)
       ? partial(curried, ...args)
-      : aFunction(...args);
+      : fn(...args);
   };
-};
+}
+
+exports.curry = curry;

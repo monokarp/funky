@@ -1,5 +1,7 @@
-exports.reverse = function reverse(aFunction) {
+function reverse(fn) {
   return function external(...args) {
-    return aFunction(...args.reverse());
+    return fn(...args.reverse());
   };
-};
+}
+
+exports.reverse = reverse;
