@@ -18,7 +18,7 @@ describe('compose', () => {
     expect(composition('')).toEqual('dcba');
   });
 
-  it('should be pure', () => {
+  it('should be stateless', () => {
     const composition = compose(fn1, fn2, fn3, fn4);
 
     expect(composition('')).toEqual('dcba');
@@ -26,7 +26,7 @@ describe('compose', () => {
     expect(composition('f')).toEqual('fdcba');
   });
 
-  it('should handle multiple args', () => {
+  it('should accept multiple args', () => {
     const multiArgs = (v1, v2, v3) => v1 + v2 + v3;
 
     const composition = compose(fn1, fn2, fn3, multiArgs);

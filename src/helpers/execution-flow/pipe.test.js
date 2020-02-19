@@ -18,7 +18,7 @@ describe('pipe', () => {
     expect(pipeline('')).toEqual('abcd');
   });
 
-  it('should be pure', () => {
+  it('should be stateless', () => {
     const pipeline = pipe(fn1, fn2, fn3, fn4);
 
     expect(pipeline('')).toEqual('abcd');
@@ -26,7 +26,7 @@ describe('pipe', () => {
     expect(pipeline('f')).toEqual('fabcd');
   });
 
-  it('should handle multiple args', () => {
+  it('should accept multiple args', () => {
     const multiArgs = (v1, v2, v3) => v1 + v2 + v3;
 
     const pipeline = pipe(multiArgs, fn1, fn2, fn3);
