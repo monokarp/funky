@@ -8,6 +8,10 @@ class StrTrieMap {
     let node = this.root;
 
     for (let index = 0; index < key.length; index += 1) {
+      if (!node) {
+        return undefined;
+      }
+
       node = node[key[index]];
     }
 

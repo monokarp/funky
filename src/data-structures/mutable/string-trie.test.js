@@ -16,6 +16,12 @@ describe('String partitioned trie', () => {
 
     expect(trie.get('abc')).toEqual(3);
   });
+  
+  it('should lookup non-existing value', () => {
+    const trie = new StrTrieMap();
+
+    expect(trie.get('abc')).toEqual(undefined);
+  });
 
   it('should update a value', () => {
     const trie = new StrTrieMap();
