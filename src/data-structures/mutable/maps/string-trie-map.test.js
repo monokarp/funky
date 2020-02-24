@@ -1,8 +1,8 @@
-const { StrTrieMap } = require('./string-trie');
+const { StringTrieMap } = require('./string-trie-map');
 
 describe('String partitioned trie', () => {
   it('should set and lookup leaf value', () => {
-    const trie = new StrTrieMap();
+    const trie = new StringTrieMap();
 
     trie.set('a', 3);
 
@@ -10,7 +10,7 @@ describe('String partitioned trie', () => {
   });
 
   it('should set and lookup nested value', () => {
-    const trie = new StrTrieMap();
+    const trie = new StringTrieMap();
 
     trie.set('abc', 3);
 
@@ -18,13 +18,21 @@ describe('String partitioned trie', () => {
   });
   
   it('should lookup non-existing value', () => {
-    const trie = new StrTrieMap();
+    const trie = new StringTrieMap();
+
+    expect(trie.get('abc')).toEqual(undefined);
+  });
+
+  it('should lookup nested non-existing value', () => {
+    const trie = new StringTrieMap();
+    
+    trie.set('abd', 3);
 
     expect(trie.get('abc')).toEqual(undefined);
   });
 
   it('should update a value', () => {
-    const trie = new StrTrieMap();
+    const trie = new StringTrieMap();
 
     trie.set('abc', 3);
 
@@ -34,7 +42,7 @@ describe('String partitioned trie', () => {
   });
 
   it('should serialize its state to string', () => {
-    const trie = new StrTrieMap();
+    const trie = new StringTrieMap();
 
     trie.set('abc', 3);
 
