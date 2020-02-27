@@ -3,12 +3,12 @@ const { Trie } = require('../trie');
 const getNumberLength = (number, radix) => {
   let result = 1;
 
-  while ((number / Math.pow(radix, result)) > 1) {
+  while ((number / radix ** result) > 1) {
     result += 1;
   }
 
   return result;
-}
+};
 
 // Digit partitioned trie map
 class DigitTrieMap extends Trie {
@@ -24,7 +24,7 @@ class DigitTrieMap extends Trie {
       return undefined;
     }
 
-    let depth = Math.pow(this.radix, getNumberLength(key, this.radix) - 1);
+    let depth = this.radix ** (getNumberLength(key, this.radix) - 1);
 
     do {
       const index = Math.floor(key / depth) % this.radix;
@@ -42,12 +42,12 @@ class DigitTrieMap extends Trie {
 
   set(key, value) {
     if (!Number.isSafeInteger(key)) {
-      return undefined;
+      return;
     }
 
     let node = this.root;
 
-    let depth = Math.pow(this.radix, getNumberLength(key, this.radix) - 1);
+    let depth = this.radix ** (getNumberLength(key, this.radix) - 1);
 
     do {
       const index = Math.floor(key / depth) % this.radix;

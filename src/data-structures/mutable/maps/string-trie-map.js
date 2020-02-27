@@ -2,10 +2,6 @@ const { Trie } = require('../trie');
 
 // String partitioned trie map
 class StringTrieMap extends Trie {
-  constructor() {
-    super();
-  }
-
   get(key) {
     let node = this.root;
 
